@@ -1,0 +1,33 @@
+PODS:
+  - Alamofire (4.8.2)
+  - BMSAnalyticsAPI (2.3.1)
+  - BMSCore (2.4.0):
+    - BMSAnalyticsAPI (~> 2.3)
+  - BMSPush (3.4.2):
+    - BMSCore (~> 2.0)
+  - WSTagsField (4.1.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - BMSCore (~> 2.0)
+  - BMSPush (~> 3.0)
+  - WSTagsField
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - BMSAnalyticsAPI
+    - BMSCore
+    - BMSPush
+    - WSTagsField
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  BMSAnalyticsAPI: f9c740eb3c0857c0955e58a10321a96b5d85304e
+  BMSCore: 73cccdaec5452ab5183afc01e85881bbb8137ef7
+  BMSPush: efdf5f9c90ca93e6a43d7ff843979d6843d14753
+  WSTagsField: 269da4be929d8945adf7195e3822b70826c1c1a4
+
+PODFILE CHECKSUM: 9f95da50d2a03c854ff714a9b34a1043f616ad73
+
+COCOAPODS: 1.6.1

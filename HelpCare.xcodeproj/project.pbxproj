@@ -1,0 +1,804 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0EF83C37DB8D16F9030D9890 /* Pods_HelpCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8434FFBF41DE4265824F13F3 /* Pods_HelpCare.framework */; };
+		7573B10E2299988600152755 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573B10D2299988600152755 /* AppDelegate.swift */; };
+		7573B1102299988600152755 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573B10F2299988600152755 /* ViewController.swift */; };
+		7573B1132299988600152755 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7573B1112299988600152755 /* Main.storyboard */; };
+		7573B1152299988700152755 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7573B1142299988700152755 /* Assets.xcassets */; };
+		7573B1182299988700152755 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7573B1162299988700152755 /* LaunchScreen.storyboard */; };
+		7573B1232299988800152755 /* HelpCareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573B1222299988800152755 /* HelpCareTests.swift */; };
+		7573B12E2299988800152755 /* HelpCareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573B12D2299988800152755 /* HelpCareUITests.swift */; };
+		7573B13C2299C58A00152755 /* TelaDoacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573B13B2299C58A00152755 /* TelaDoacao.swift */; };
+		7573B13E2299C5B800152755 /* Cursos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573B13D2299C5B800152755 /* Cursos.swift */; };
+		7573B1402299C5F700152755 /* PagamentoCursos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573B13F2299C5F700152755 /* PagamentoCursos.swift */; };
+		7573B1432299C66600152755 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573B1422299C66600152755 /* TableViewController.swift */; };
+		7573B1452299C67800152755 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573B1442299C67800152755 /* TableViewCell.swift */; };
+		9B74AEC894C9F0F5162A50BF /* Pods_HelpCareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02C119C8B0D72FED762CE7EA /* Pods_HelpCareTests.framework */; };
+		BC132AD6229A0D36009AD611 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC132AD5229A0D36009AD611 /* CadastroViewController.swift */; };
+		BCAEC3E3229A05CE009C6705 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAEC3E2229A05CE009C6705 /* RoundedButton.swift */; };
+		C2C011368069B338E6A87140 /* Pods_HelpCareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC28BECF3A8713ADDAD8B03 /* Pods_HelpCareUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7573B11F2299988800152755 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7573B1022299988600152755 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7573B1092299988600152755;
+			remoteInfo = HelpCare;
+		};
+		7573B12A2299988800152755 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7573B1022299988600152755 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7573B1092299988600152755;
+			remoteInfo = HelpCare;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02C119C8B0D72FED762CE7EA /* Pods_HelpCareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelpCareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0667098117954D924F39B584 /* Pods-HelpCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpCare.debug.xcconfig"; path = "Target Support Files/Pods-HelpCare/Pods-HelpCare.debug.xcconfig"; sourceTree = "<group>"; };
+		52BA7B640BD5A0BFBEA207FA /* Pods-HelpCareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpCareTests.debug.xcconfig"; path = "Target Support Files/Pods-HelpCareTests/Pods-HelpCareTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6105B1EDAC48C8F2847F7ACC /* Pods-HelpCareUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpCareUITests.debug.xcconfig"; path = "Target Support Files/Pods-HelpCareUITests/Pods-HelpCareUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7573B10A2299988600152755 /* HelpCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelpCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7573B10D2299988600152755 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7573B10F2299988600152755 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7573B1122299988600152755 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7573B1142299988700152755 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7573B1172299988700152755 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7573B1192299988800152755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7573B11E2299988800152755 /* HelpCareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelpCareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7573B1222299988800152755 /* HelpCareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCareTests.swift; sourceTree = "<group>"; };
+		7573B1242299988800152755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7573B1292299988800152755 /* HelpCareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelpCareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7573B12D2299988800152755 /* HelpCareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCareUITests.swift; sourceTree = "<group>"; };
+		7573B12F2299988800152755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7573B13B2299C58A00152755 /* TelaDoacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaDoacao.swift; sourceTree = "<group>"; };
+		7573B13D2299C5B800152755 /* Cursos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cursos.swift; sourceTree = "<group>"; };
+		7573B13F2299C5F700152755 /* PagamentoCursos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagamentoCursos.swift; sourceTree = "<group>"; };
+		7573B1422299C66600152755 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		7573B1442299C67800152755 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		77F6DC38B76DFCC6929EE342 /* Pods-HelpCareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpCareTests.release.xcconfig"; path = "Target Support Files/Pods-HelpCareTests/Pods-HelpCareTests.release.xcconfig"; sourceTree = "<group>"; };
+		8434FFBF41DE4265824F13F3 /* Pods_HelpCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelpCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC132AD5229A0D36009AD611 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
+		BCAEC3E02299E1C8009C6705 /* HelpCare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HelpCare.entitlements; sourceTree = "<group>"; };
+		BCAEC3E2229A05CE009C6705 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		C57899E7487B9AE5D94DAB34 /* Pods-HelpCareUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpCareUITests.release.xcconfig"; path = "Target Support Files/Pods-HelpCareUITests/Pods-HelpCareUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E1C71A3C8F46D33EAE0E8342 /* Pods-HelpCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpCare.release.xcconfig"; path = "Target Support Files/Pods-HelpCare/Pods-HelpCare.release.xcconfig"; sourceTree = "<group>"; };
+		EDC28BECF3A8713ADDAD8B03 /* Pods_HelpCareUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelpCareUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7573B1072299988600152755 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EF83C37DB8D16F9030D9890 /* Pods_HelpCare.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7573B11B2299988800152755 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B74AEC894C9F0F5162A50BF /* Pods_HelpCareTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7573B1262299988800152755 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2C011368069B338E6A87140 /* Pods_HelpCareUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3012604679DDF78868426EE9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0667098117954D924F39B584 /* Pods-HelpCare.debug.xcconfig */,
+				E1C71A3C8F46D33EAE0E8342 /* Pods-HelpCare.release.xcconfig */,
+				52BA7B640BD5A0BFBEA207FA /* Pods-HelpCareTests.debug.xcconfig */,
+				77F6DC38B76DFCC6929EE342 /* Pods-HelpCareTests.release.xcconfig */,
+				6105B1EDAC48C8F2847F7ACC /* Pods-HelpCareUITests.debug.xcconfig */,
+				C57899E7487B9AE5D94DAB34 /* Pods-HelpCareUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7573B1012299988600152755 = {
+			isa = PBXGroup;
+			children = (
+				7573B10C2299988600152755 /* HelpCare */,
+				7573B1212299988800152755 /* HelpCareTests */,
+				7573B12C2299988800152755 /* HelpCareUITests */,
+				7573B10B2299988600152755 /* Products */,
+				3012604679DDF78868426EE9 /* Pods */,
+				8A8FC0A0B19B600628719310 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7573B10B2299988600152755 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7573B10A2299988600152755 /* HelpCare.app */,
+				7573B11E2299988800152755 /* HelpCareTests.xctest */,
+				7573B1292299988800152755 /* HelpCareUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7573B10C2299988600152755 /* HelpCare */ = {
+			isa = PBXGroup;
+			children = (
+				BCAEC3E1229A05BA009C6705 /* Custom */,
+				BCAEC3E02299E1C8009C6705 /* HelpCare.entitlements */,
+				7573B1462299C68400152755 /* Controller */,
+				7573B1412299C64E00152755 /* TableView */,
+				7573B10D2299988600152755 /* AppDelegate.swift */,
+				7573B1112299988600152755 /* Main.storyboard */,
+				7573B1142299988700152755 /* Assets.xcassets */,
+				7573B1162299988700152755 /* LaunchScreen.storyboard */,
+				7573B1192299988800152755 /* Info.plist */,
+			);
+			path = HelpCare;
+			sourceTree = "<group>";
+		};
+		7573B1212299988800152755 /* HelpCareTests */ = {
+			isa = PBXGroup;
+			children = (
+				7573B1222299988800152755 /* HelpCareTests.swift */,
+				7573B1242299988800152755 /* Info.plist */,
+			);
+			path = HelpCareTests;
+			sourceTree = "<group>";
+		};
+		7573B12C2299988800152755 /* HelpCareUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7573B12D2299988800152755 /* HelpCareUITests.swift */,
+				7573B12F2299988800152755 /* Info.plist */,
+			);
+			path = HelpCareUITests;
+			sourceTree = "<group>";
+		};
+		7573B1412299C64E00152755 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				7573B1422299C66600152755 /* TableViewController.swift */,
+				7573B1442299C67800152755 /* TableViewCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		7573B1462299C68400152755 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7573B10F2299988600152755 /* ViewController.swift */,
+				7573B13B2299C58A00152755 /* TelaDoacao.swift */,
+				7573B13D2299C5B800152755 /* Cursos.swift */,
+				7573B13F2299C5F700152755 /* PagamentoCursos.swift */,
+				BC132AD5229A0D36009AD611 /* CadastroViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8A8FC0A0B19B600628719310 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8434FFBF41DE4265824F13F3 /* Pods_HelpCare.framework */,
+				02C119C8B0D72FED762CE7EA /* Pods_HelpCareTests.framework */,
+				EDC28BECF3A8713ADDAD8B03 /* Pods_HelpCareUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCAEC3E1229A05BA009C6705 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				BCAEC3E2229A05CE009C6705 /* RoundedButton.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7573B1092299988600152755 /* HelpCare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7573B1322299988800152755 /* Build configuration list for PBXNativeTarget "HelpCare" */;
+			buildPhases = (
+				DC0FE9959BC6DCA62093D9F7 /* [CP] Check Pods Manifest.lock */,
+				7573B1062299988600152755 /* Sources */,
+				7573B1072299988600152755 /* Frameworks */,
+				7573B1082299988600152755 /* Resources */,
+				67CC9C9FA9C2D23FD1EC415E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HelpCare;
+			productName = HelpCare;
+			productReference = 7573B10A2299988600152755 /* HelpCare.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7573B11D2299988800152755 /* HelpCareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7573B1352299988800152755 /* Build configuration list for PBXNativeTarget "HelpCareTests" */;
+			buildPhases = (
+				18A8C6FC3CE2D68491EF48CA /* [CP] Check Pods Manifest.lock */,
+				7573B11A2299988800152755 /* Sources */,
+				7573B11B2299988800152755 /* Frameworks */,
+				7573B11C2299988800152755 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7573B1202299988800152755 /* PBXTargetDependency */,
+			);
+			name = HelpCareTests;
+			productName = HelpCareTests;
+			productReference = 7573B11E2299988800152755 /* HelpCareTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7573B1282299988800152755 /* HelpCareUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7573B1382299988800152755 /* Build configuration list for PBXNativeTarget "HelpCareUITests" */;
+			buildPhases = (
+				CF57D339E016D85F3DC32EE3 /* [CP] Check Pods Manifest.lock */,
+				7573B1252299988800152755 /* Sources */,
+				7573B1262299988800152755 /* Frameworks */,
+				7573B1272299988800152755 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7573B12B2299988800152755 /* PBXTargetDependency */,
+			);
+			name = HelpCareUITests;
+			productName = HelpCareUITests;
+			productReference = 7573B1292299988800152755 /* HelpCareUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7573B1022299988600152755 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Lucas Dok";
+				TargetAttributes = {
+					7573B1092299988600152755 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					7573B11D2299988800152755 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 7573B1092299988600152755;
+					};
+					7573B1282299988800152755 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 7573B1092299988600152755;
+					};
+				};
+			};
+			buildConfigurationList = 7573B1052299988600152755 /* Build configuration list for PBXProject "HelpCare" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7573B1012299988600152755;
+			productRefGroup = 7573B10B2299988600152755 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7573B1092299988600152755 /* HelpCare */,
+				7573B11D2299988800152755 /* HelpCareTests */,
+				7573B1282299988800152755 /* HelpCareUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7573B1082299988600152755 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7573B1182299988700152755 /* LaunchScreen.storyboard in Resources */,
+				7573B1152299988700152755 /* Assets.xcassets in Resources */,
+				7573B1132299988600152755 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7573B11C2299988800152755 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7573B1272299988800152755 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18A8C6FC3CE2D68491EF48CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HelpCareTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67CC9C9FA9C2D23FD1EC415E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HelpCare/Pods-HelpCare-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BMSAnalyticsAPI/BMSAnalyticsAPI.framework",
+				"${BUILT_PRODUCTS_DIR}/BMSCore/BMSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/BMSPush/BMSPush.framework",
+				"${BUILT_PRODUCTS_DIR}/WSTagsField/WSTagsField.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BMSAnalyticsAPI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BMSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BMSPush.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WSTagsField.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HelpCare/Pods-HelpCare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF57D339E016D85F3DC32EE3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HelpCareUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC0FE9959BC6DCA62093D9F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HelpCare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7573B1062299988600152755 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7573B1102299988600152755 /* ViewController.swift in Sources */,
+				BC132AD6229A0D36009AD611 /* CadastroViewController.swift in Sources */,
+				7573B1432299C66600152755 /* TableViewController.swift in Sources */,
+				7573B1402299C5F700152755 /* PagamentoCursos.swift in Sources */,
+				BCAEC3E3229A05CE009C6705 /* RoundedButton.swift in Sources */,
+				7573B10E2299988600152755 /* AppDelegate.swift in Sources */,
+				7573B13E2299C5B800152755 /* Cursos.swift in Sources */,
+				7573B1452299C67800152755 /* TableViewCell.swift in Sources */,
+				7573B13C2299C58A00152755 /* TelaDoacao.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7573B11A2299988800152755 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7573B1232299988800152755 /* HelpCareTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7573B1252299988800152755 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7573B12E2299988800152755 /* HelpCareUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7573B1202299988800152755 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7573B1092299988600152755 /* HelpCare */;
+			targetProxy = 7573B11F2299988800152755 /* PBXContainerItemProxy */;
+		};
+		7573B12B2299988800152755 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7573B1092299988600152755 /* HelpCare */;
+			targetProxy = 7573B12A2299988800152755 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7573B1112299988600152755 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7573B1122299988600152755 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7573B1162299988700152755 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7573B1172299988700152755 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7573B1302299988800152755 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7573B1312299988800152755 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7573B1332299988800152755 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0667098117954D924F39B584 /* Pods-HelpCare.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HelpCare/HelpCare.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7984M9FF87;
+				INFOPLIST_FILE = HelpCare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.carlosdoki.HelpCare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7573B1342299988800152755 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1C71A3C8F46D33EAE0E8342 /* Pods-HelpCare.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HelpCare/HelpCare.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7984M9FF87;
+				INFOPLIST_FILE = HelpCare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.carlosdoki.HelpCare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7573B1362299988800152755 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52BA7B640BD5A0BFBEA207FA /* Pods-HelpCareTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7984M9FF87;
+				INFOPLIST_FILE = HelpCareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.HelpCareTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelpCare.app/HelpCare";
+			};
+			name = Debug;
+		};
+		7573B1372299988800152755 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77F6DC38B76DFCC6929EE342 /* Pods-HelpCareTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7984M9FF87;
+				INFOPLIST_FILE = HelpCareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.HelpCareTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelpCare.app/HelpCare";
+			};
+			name = Release;
+		};
+		7573B1392299988800152755 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6105B1EDAC48C8F2847F7ACC /* Pods-HelpCareUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7984M9FF87;
+				INFOPLIST_FILE = HelpCareUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.HelpCareUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HelpCare;
+			};
+			name = Debug;
+		};
+		7573B13A2299988800152755 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C57899E7487B9AE5D94DAB34 /* Pods-HelpCareUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7984M9FF87;
+				INFOPLIST_FILE = HelpCareUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.HelpCareUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HelpCare;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7573B1052299988600152755 /* Build configuration list for PBXProject "HelpCare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7573B1302299988800152755 /* Debug */,
+				7573B1312299988800152755 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7573B1322299988800152755 /* Build configuration list for PBXNativeTarget "HelpCare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7573B1332299988800152755 /* Debug */,
+				7573B1342299988800152755 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7573B1352299988800152755 /* Build configuration list for PBXNativeTarget "HelpCareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7573B1362299988800152755 /* Debug */,
+				7573B1372299988800152755 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7573B1382299988800152755 /* Build configuration list for PBXNativeTarget "HelpCareUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7573B1392299988800152755 /* Debug */,
+				7573B13A2299988800152755 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7573B1022299988600152755 /* Project object */;
+}
