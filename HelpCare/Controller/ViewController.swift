@@ -19,6 +19,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     @IBOutlet weak var aceitarBtn: RoundedButton!
     @IBOutlet weak var recusarBtn: RoundedButton!
     @IBOutlet weak var usuarioLbl: UILabel!
+    @IBOutlet weak var carregandoV: UIView!
+    @IBOutlet weak var mensagemV: UIView!
+    @IBOutlet weak var naoHaDesastresLbl: UILabel!
+    @IBOutlet weak var voluntarioLbl: UILabel!
     
     private var locationManager: CLLocationManager!
     private var currentLocation: CLLocation?
@@ -32,7 +36,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        carregandoV.isHidden = false
+        mensagemV.isHidden = true
         usuarioLbl.text = "Olá \(nome)"
         
         NotificationCenter.default.addObserver(self,
@@ -42,6 +47,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         mapView.isHidden = true
         aceitarBtn.isHidden = true
         recusarBtn.isHidden = true
+        naoHaDesastresLbl.isHidden = true
+        
         Alamofire.request("https://lclzk8zkji.execute-api.us-east-1.amazonaws.com/dev/x/disasters/35a317f0-7f46-11e9-b63b-cd64b780f8e3/users/\(idusuario)").responseJSON { response in
             if let json = response.data {
                 do {
@@ -64,7 +71,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                         self.mapView.isHidden = false
                         self.aceitarBtn.isHidden = false
                         self.recusarBtn.isHidden = false
+                        self.naoHaDesastresLbl.isHidden = false
+                    } else {
+                        self.naoHaDesastresLbl.isHidden = false
                     }
+                    self.carregandoV.isHidden = true
                 } catch let parsingError {
                     print("Error", parsingError)
                 }
@@ -78,10 +89,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        mensagemV.isHidden = true
+        
+    }
     
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        //        NotificationCenter.default.removeObserver(self, name: .postRegisterCallback, object: nil)
+       
     }
     
     
@@ -101,4 +116,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         }
     }
     
+    @IBAction func aceitarPressed(_ sender: Any) {
+        mensagemV.isHidden = false
+        mapView.isHidden = true
+        aceitarBtn.isHidden = true
+        recusarBtn.isHidden = true
+        voluntarioLbl.text = "Obrigado pelo voluntariado"
+    }
+    
+    @IBAction func recusarPressed(_ sender: Any) {
+        mensagemV.isHidden = false
+        mapView.isHidden = true
+        aceitarBtn.isHidden = true
+        recusarBtn.isHidden = true
+        voluntarioLbl.text = "Que pena, mas obrigado pelo voluntariado"
+        
+    }
 }

@@ -19,12 +19,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fundo" translatesAutoresizingMaskIntoConstraints="NO" id="fOA-jK-LrQ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="24" width="414" height="838"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="fOA-jK-LrQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="48n-XO-sWW"/>
+                            <constraint firstItem="fOA-jK-LrQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="48n-XO-sWW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fOA-jK-LrQ" secondAttribute="bottom" id="YKJ-MY-aFn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fOA-jK-LrQ" secondAttribute="trailing" id="mZn-WV-Pkd"/>
                             <constraint firstItem="fOA-jK-LrQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="olZ-BR-k3z"/>
