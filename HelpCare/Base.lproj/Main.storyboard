@@ -604,7 +604,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Notificações" image="002-notification copy" id="HeP-YT-0uo"/>
                     <connections>
+                        <outlet property="aceitarBtn" destination="s7J-6Q-CKP" id="v2b-7r-cbx"/>
                         <outlet property="mapView" destination="z9r-Al-AlT" id="TTb-rr-ck5"/>
+                        <outlet property="recusarBtn" destination="hbN-5G-Glw" id="GCn-1q-uoD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPx-lf-6pV" userLabel="First Responder" sceneMemberID="firstResponder"/>

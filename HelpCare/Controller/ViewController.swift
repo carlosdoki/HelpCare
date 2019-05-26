@@ -10,10 +10,14 @@ import UIKit
 import MapKit
 import CoreLocation
 import Alamofire
+import BMSCore
+
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var aceitarBtn: RoundedButton!
+    @IBOutlet weak var recusarBtn: RoundedButton!
     
     private var locationManager: CLLocationManager!
     private var currentLocation: CLLocation?
@@ -28,10 +32,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //        NotificationCenter.default.addObserver(self, name: .postRegisterCallback, object: nil)
-        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(didBecomeActive),
+                                               name: UIApplication.didBecomeActiveNotification, object: nil)
         mapView.delegate = self
         mapView.isHidden = true
+        aceitarBtn.isHidden = true
+        recusarBtn.isHidden = true
         Alamofire.request("https://lclzk8zkji.execute-api.us-east-1.amazonaws.com/dev/x/disasters/35a317f0-7f46-11e9-b63b-cd64b780f8e3/users/98323510-7f71-11e9-900a-cd5dd7ff5e4a").responseJSON { response in
             if let json = response.data {
                 do {
@@ -52,6 +59,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                             self.mapView.showsUserLocation = true
                         }
                         self.mapView.isHidden = false
+                        self.aceitarBtn.isHidden = false
+                        self.recusarBtn.isHidden = false
                     }
                 } catch let parsingError {
                     print("Error", parsingError)
@@ -60,6 +69,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         }
         
     }
+    
+    @objc func didBecomeActive(_ notification: Notification) {
+        
+        
+    }
+    
     
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -83,9 +98,4 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         }
     }
     
-}
-
-
-extension Notification.Name {
-    static let postRegisterCallback = Notification.Name("postRegisterCallback")
 }
