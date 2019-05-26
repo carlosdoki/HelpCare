@@ -10,3 +10,4 @@ import Foundation
 
 var nome = ""
 var idusuario = ""
+var total = 0.0

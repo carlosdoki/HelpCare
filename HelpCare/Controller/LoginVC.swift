@@ -13,6 +13,7 @@ class LoginVC: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource {
 
     
     @IBOutlet weak var pickerLogin: UIPickerView!
+    @IBOutlet weak var carregandoV: UIView!
     
     struct User : Codable {
         let id: String
@@ -34,6 +35,8 @@ class LoginVC: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        carregandoV.isHidden = false
+        
         self.pickerLogin.delegate = self
         self.pickerLogin.dataSource = self
         
@@ -47,6 +50,7 @@ class LoginVC: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource {
                         self.ids.append(user.id)
                     }
                     self.pickerLogin.reloadAllComponents()
+                    self.carregandoV.isHidden = true
                 } catch let parsingError {
                     print("Error", parsingError)
                 }

@@ -13,6 +13,8 @@ class TelaDoacao: UIViewController, UITableViewDelegate, UITableViewDataSource  
 
     @IBOutlet weak var kitsTbl: UITableView!
     @IBOutlet weak var usuarioLbl: UILabel!
+    @IBOutlet weak var carregandoV: UIView!
+    @IBOutlet weak var doacaoV: UIView!
     
     struct Kit : Codable {
         let id: String
@@ -26,7 +28,9 @@ class TelaDoacao: UIViewController, UITableViewDelegate, UITableViewDataSource  
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        carregandoV.isHidden = false
+        doacaoV.isHidden = true
+        
         usuarioLbl.text = "Olá \(nome)"
         
         kitsTbl.delegate = self
@@ -40,6 +44,7 @@ class TelaDoacao: UIViewController, UITableViewDelegate, UITableViewDataSource  
                     self.kits = try decoder.decode([Kit].self, from: json as! Data)
                     self.kits.sort(by: {$0.name < $1.name})
                     self.kitsTbl.reloadData()
+                    self.carregandoV.isHidden = true
                 } catch let parsingError {
                     print("Error", parsingError)
                 }
@@ -47,7 +52,11 @@ class TelaDoacao: UIViewController, UITableViewDelegate, UITableViewDataSource  
         }
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        doacaoV.isHidden = true
+    }
     @IBAction func doarPressed(_ sender: Any) {
+        doacaoV.isHidden = false
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

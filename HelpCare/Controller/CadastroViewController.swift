@@ -24,6 +24,7 @@ class CadastroViewController: UIViewController, CLLocationManagerDelegate, MKMap
     @IBOutlet weak var telefoneTxt: UITextField!
     @IBOutlet weak var usuariolbl: UILabel!
     @IBOutlet weak var tagsView: UIView!
+    @IBOutlet weak var carregandoV: UIView!
     
     private var locationManager: CLLocationManager!
     private var currentLocation: CLLocation?
@@ -49,6 +50,8 @@ class CadastroViewController: UIViewController, CLLocationManagerDelegate, MKMap
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        carregandoV.isHidden = false
+        
         usuariolbl.text = "Olá \(nome)"
         tagsField.frame = tagsView.bounds
         tagsView.addSubview(tagsField)
@@ -108,7 +111,7 @@ class CadastroViewController: UIViewController, CLLocationManagerDelegate, MKMap
                         self.mapView.addOverlay(self.circle)
                         let viewRegion = MKCoordinateRegion(center: coordinates, latitudinalMeters: CLLocationDistance(users.distancia*100), longitudinalMeters: CLLocationDistance(users.distancia*100))
                         self.mapView.setRegion(viewRegion, animated: false)
-
+                        self.carregandoV.isHidden = true
                     } catch let parsingError {
                         print("Error", parsingError)
                     }
