@@ -23,6 +23,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         // Do any additional setup after loading the view, typically from a nib.
         
 //        NotificationCenter.default.addObserver(self, name: .postRegisterCallback, object: nil)
+//        https://lclzk8zkji.execute-api.us-east-1.amazonaws.com/dev/x/disasters/35a317f0-7f46-11e9-b63b-cd64b780f8e3/users/98323510-7f71-11e9-900a-cd5dd7ff5e4a
+        
         mapView.delegate = self
         
         locationManager = CLLocationManager()

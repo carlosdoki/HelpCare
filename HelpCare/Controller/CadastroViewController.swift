@@ -84,6 +84,8 @@ class CadastroViewController: UIViewController, CLLocationManagerDelegate, MKMap
             locationManager.startUpdatingLocation()
             mapView.showsUserLocation = true
         }
+        slider.value = 0
+        distanciaTxt.text = "0 KM"
 
         Alamofire.request("https://lclzk8zkji.execute-api.us-east-1.amazonaws.com/dev/x/users/98323510-7f71-11e9-900a-cd5dd7ff5e4a").responseJSON { response in
                 if let json = response.data {
@@ -94,25 +96,24 @@ class CadastroViewController: UIViewController, CLLocationManagerDelegate, MKMap
                         self.emailTxt.text = users.email
                         self.telefoneTxt.text = users.telefone
                         self.distanciaTxt.text = "\(users.distancia) KM"
-                        self.usuariolbl.text = "Olá \(users.name)" 
+                        self.usuariolbl.text = "Olá \(users.name)"
+                        self.slider.value = Float(users.distancia)
                         var skills = users.skills.components(separatedBy: ",")
                         for skill in skills {
                             self.tagsField.addTag(skill)
                         }
-                        
+                        let coordinates = CLLocationCoordinate2D(latitude: (self.locationManager.location?.coordinate.latitude)!, longitude: (self.locationManager.location?.coordinate.longitude)!)
+                        self.circle = MKCircle(center: coordinates, radius: CLLocationDistance(0))
+                        self.mapView.addOverlay(self.circle)
+                        let viewRegion = MKCoordinateRegion(center: coordinates, latitudinalMeters: CLLocationDistance(users.distancia*100), longitudinalMeters: CLLocationDistance(users.distancia*100))
+                        self.mapView.setRegion(viewRegion, animated: false)
+
                     } catch let parsingError {
                         print("Error", parsingError)
                     }
                 }
             }
-        
-        print("lat=\(locationManager.location?.coordinate.latitude)")
-        print("log=\(locationManager.location?.coordinate.longitude)")
-        let coordinates = CLLocationCoordinate2D(latitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!)
-        circle = MKCircle(center: coordinates, radius: CLLocationDistance(0))
-        mapView.addOverlay(circle)
-        slider.value = 0
-        distanciaTxt.text = "0 KM"
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
