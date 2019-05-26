@@ -49,6 +49,7 @@ class CadastroViewController: UIViewController, CLLocationManagerDelegate, MKMap
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        usuariolbl.text = "Olá \(nome)"
         tagsField.frame = tagsView.bounds
         tagsView.addSubview(tagsField)
         
@@ -87,7 +88,7 @@ class CadastroViewController: UIViewController, CLLocationManagerDelegate, MKMap
         slider.value = 0
         distanciaTxt.text = "0 KM"
 
-        Alamofire.request("https://lclzk8zkji.execute-api.us-east-1.amazonaws.com/dev/x/users/98323510-7f71-11e9-900a-cd5dd7ff5e4a").responseJSON { response in
+        Alamofire.request("https://lclzk8zkji.execute-api.us-east-1.amazonaws.com/dev/x/users/\(idusuario)").responseJSON { response in
                 if let json = response.data {
                     do {
                     let decoder = JSONDecoder()

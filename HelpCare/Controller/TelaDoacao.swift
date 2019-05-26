@@ -12,6 +12,7 @@ import Alamofire
 class TelaDoacao: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 
     @IBOutlet weak var kitsTbl: UITableView!
+    @IBOutlet weak var usuarioLbl: UILabel!
     
     struct Kit : Codable {
         let id: String
@@ -26,6 +27,8 @@ class TelaDoacao: UIViewController, UITableViewDelegate, UITableViewDataSource  
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        usuarioLbl.text = "Olá \(nome)"
+        
         kitsTbl.delegate = self
         kitsTbl.dataSource = self
 
@@ -35,7 +38,7 @@ class TelaDoacao: UIViewController, UITableViewDelegate, UITableViewDataSource  
                 do {
                     let decoder = JSONDecoder()
                     self.kits = try decoder.decode([Kit].self, from: json as! Data)
-                    
+                    self.kits.sort(by: {$0.name < $1.name})
                     self.kitsTbl.reloadData()
                 } catch let parsingError {
                     print("Error", parsingError)
