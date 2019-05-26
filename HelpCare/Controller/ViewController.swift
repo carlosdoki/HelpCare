@@ -91,6 +91,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     override func viewDidDisappear(_ animated: Bool) {
         mensagemV.isHidden = true
+        if recusarBtn.isHidden {
+            naoHaDesastresLbl.isHidden = false
+        }
         
     }
     
@@ -117,6 +120,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     @IBAction func aceitarPressed(_ sender: Any) {
+        naoHaDesastresLbl.isHidden = true
         mensagemV.isHidden = false
         mapView.isHidden = true
         aceitarBtn.isHidden = true
@@ -125,6 +129,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     @IBAction func recusarPressed(_ sender: Any) {
+        naoHaDesastresLbl.isHidden = true
         mensagemV.isHidden = false
         mapView.isHidden = true
         aceitarBtn.isHidden = true
