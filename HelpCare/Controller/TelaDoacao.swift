@@ -9,12 +9,15 @@
 import UIKit
 import Alamofire
 
-class TelaDoacao: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+
+class TelaDoacao: UIViewController, UITableViewDelegate, UITableViewDataSource, UIWebViewDelegate  {
 
     @IBOutlet weak var kitsTbl: UITableView!
     @IBOutlet weak var usuarioLbl: UILabel!
     @IBOutlet weak var carregandoV: UIView!
     @IBOutlet weak var doacaoV: UIView!
+    @IBOutlet weak var webView: UIWebView!
+    
     
     struct Kit : Codable {
         let id: String
@@ -28,6 +31,10 @@ class TelaDoacao: UIViewController, UITableViewDelegate, UITableViewDataSource  
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        webView.isHidden = true
+        
+        webView.delegate = self
+        
         carregandoV.isHidden = false
         doacaoV.isHidden = true
         
@@ -55,7 +62,22 @@ class TelaDoacao: UIViewController, UITableViewDelegate, UITableViewDataSource  
     override func viewDidDisappear(_ animated: Bool) {
         doacaoV.isHidden = true
     }
-    @IBAction func doarPressed(_ sender: Any) {
+    
+    @IBAction func doarPressed(_ sender: Any)
+    {
+        webView.isHidden = false
+        carregandoV.isHidden = false
+        let url = NSURL(string: "https://sb-autenticacao-api.original.com.br/OriginalConnect/LoginController");
+        
+        let requestObj = NSURLRequest(url: url! as URL);
+        
+        webView.loadRequest(requestObj as URLRequest);
+    }
+
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        webView.isHidden = true
+        carregandoV.isHidden = true
+        usleep(5000000)
         doacaoV.isHidden = false
     }
     

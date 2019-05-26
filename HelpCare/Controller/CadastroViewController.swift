@@ -138,7 +138,7 @@ class CadastroViewController: UIViewController, CLLocationManagerDelegate, MKMap
         circle = MKCircle(center: coordinates, radius: CLLocationDistance(myIntValue * 100))
         mapView.addOverlay(circle)
         distanciaTxt.text = "\(myIntValue) KM"
-        let viewRegion = MKCoordinateRegion(center: (currentLocation?.coordinate)!, latitudinalMeters: CLLocationDistance(myIntValue*100), longitudinalMeters: CLLocationDistance(myIntValue*100))
+        let viewRegion = MKCoordinateRegion(center: (currentLocation?.coordinate)!, latitudinalMeters: CLLocationDistance(myIntValue*300), longitudinalMeters: CLLocationDistance(myIntValue*300))
         mapView.setRegion(viewRegion, animated: false)
     }
     
