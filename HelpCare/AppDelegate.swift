@@ -9,110 +9,65 @@
 import UIKit
 import BMSCore
 import BMSPush
-import UserNotificationsUI
-
-let myBMSClient = BMSClient.sharedInstance
-let push =  BMSPushClient.sharedInstance
-let pushAppGUID = "43449690-8e31-4c50-844f-7fb25a1b357a"
-let pushClientSecret = "666a746b-757c-4e69-ae71-6d98cb2bc69c"
-let cloudRegion = BMSClient.Region.usSouth
-
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, BMSPushObserver {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     var window: UIWindow?
-
-    func getPushOptions() -> BMSPushClientOptions{
-        let actionOne = BMSPushNotificationAction(identifierName: "FIRST", buttonTitle: "Accept", isAuthenticationRequired: false, defineActivationMode: UIUserNotificationActivationMode.background)
-        
-        let actionTwo = BMSPushNotificationAction(identifierName: "SECOND", buttonTitle: "Reject", isAuthenticationRequired: false, defineActivationMode: UIUserNotificationActivationMode.background)
-        
-        let actionThree = BMSPushNotificationAction(identifierName: "Third", buttonTitle: "Delete", isAuthenticationRequired: false, defineActivationMode: UIUserNotificationActivationMode.background)
-        
-        let actionFour = BMSPushNotificationAction(identifierName: "Fourth", buttonTitle: "View", isAuthenticationRequired: false, defineActivationMode: UIUserNotificationActivationMode.background)
-        
-        let actionFive = BMSPushNotificationAction(identifierName: "Fifth", buttonTitle: "Later", isAuthenticationRequired: false, defineActivationMode: UIUserNotificationActivationMode.background)
-        
-        let category = BMSPushNotificationActionCategory(identifierName: "category", buttonActions: [actionOne, actionTwo])
-        let categorySecond = BMSPushNotificationActionCategory(identifierName: "category1", buttonActions: [actionOne, actionTwo])
-        let categoryThird = BMSPushNotificationActionCategory(identifierName: "category2", buttonActions: [actionOne, actionTwo,actionThree,actionFour,actionFive])
-        
-        let notifOptions = BMSPushClientOptions()
-//        notifOptions.setDeviceId(deviceId: customeDeviceId)
-        
-//        notifOptions.setPushVariables(pushVariables: pushVariables)
-        notifOptions.setInteractiveNotificationCategories(categoryName: [category,categorySecond,categoryThird])
-        
-        return notifOptions
-    }
     
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
-        myBMSClient.initialize(bluemixRegion: cloudRegion)
-        let pushNotificationOptions = getPushOptions()
-
-        push.initializeWithAppGUID(appGUID: pushAppGUID, clientSecret: pushClientSecret , options: pushNotificationOptions)
-        push.delegate = self
+        let myBMSClient = BMSClient.sharedInstance
+        myBMSClient.initialize(bluemixRegion: BMSClient.Region.usSouth)
+        myBMSClient.requestTimeout = 10.0 // seconds
+        
+        if let contents = Bundle.main.path(forResource:"BMSCredentials", ofType: "plist"), let dictionary = NSDictionary(contentsOfFile: contents) {
+            let push = BMSPushClient.sharedInstance
+            push.initializeWithAppGUID(appGUID: dictionary["pushAppGuid"] as! String, clientSecret: dictionary["pushClientSecret"] as! String)
+        }
+        
+        
         
         return true
     }
     
-    func onChangePermission(status: Bool) {
-        print("Push Notification is enabled:  \(status)" as NSString)
-    }
     
+    
+    // Initialize IBM Cloud Push Notifications client SDK and register device.
     func application (_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data){
+        let push = BMSPushClient.sharedInstance
         
-        
-        push.registerWithDeviceToken(deviceToken: deviceToken, WithUserId: "doki") { (response, statusCode, error) -> Void in
+        // Replace USER_ID with a unique end user identifier. This enables specific push notification targeting.
+        push.registerWithDeviceToken(deviceToken: deviceToken) { (response, statusCode, error) -> Void in
             if error.isEmpty {
-                print( "Response during device registration : \(response)")
-                print( "status code during device registration : \(statusCode)")
-            } else{
-                print( "Error during device registration \(error) ")
-                print( "Error during device registration \n  - status code: \(statusCode) \n Error :\(error) \n")
+                print("Response during device registration : \(String(describing: response))")
+                print("status code during device registration : \(String(describing: statusCode))")
+            } else {
+                print("Error during device registration \(error)")
+                print("Error during device registration \n  - status code: \(String(describing: statusCode)) \n  - Error: \(error) \n")
             }
         }
     }
     
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-        
-//        let push =  BMSPushClient.sharedInstance
-        let respJson = (userInfo as NSDictionary).value(forKey: "payload") as! String
-        let data = respJson.data(using: String.Encoding.utf8)
-        
-        let jsonResponse:NSDictionary = try! JSONSerialization.jsonObject(with: data! , options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-        
-        let messageId:String = jsonResponse.value(forKey: "nid") as! String
-        push.sendMessageDeliveryStatus(messageId: messageId) { (res, ss, ee) in
-            print("Send message status to the Push server")
-        }
-    }
-    
-    // Send notification status when the app is in background mode.
+    // Alerts the user of a received push notification when the app is running in the foreground.
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         
-        let payLoad = ((((userInfo as NSDictionary).value(forKey: "aps") as! NSDictionary).value(forKey: "alert") as! NSDictionary).value(forKey: "body") as! NSString)
+        // UserInfo dictionary will contain data sent from the server.
+        var userPayload = String()
+        let payload = ((((userInfo as NSDictionary).value(forKey:"aps") as! NSDictionary).value(forKey:"alert") as! NSDictionary).value(forKey:"body") as! NSString)
+        let additionalPayload = (userInfo as NSDictionary).value(forKey:"payload")
+        userPayload = additionalPayload.debugDescription
         
-//        self.showAlert(title: "Recieved Push notifications", message: payLoad)
+        let alert = UIAlertController(title: "Push Notification Received",
+                                      message: payload as String,
+                                      preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+        application.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
         
-//        let push =  BMSPushClient.sharedInstance
-        
-        let respJson = (userInfo as NSDictionary).value(forKey: "payload") as! String
-        let data = respJson.data(using: String.Encoding.utf8)
-        
-        let jsonResponse:NSDictionary = try! JSONSerialization.jsonObject(with: data! , options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-        
-        let messageId:String = jsonResponse.value(forKey: "nid") as! String
-        push.sendMessageDeliveryStatus(messageId: messageId) { (res, ss, ee) in
-            completionHandler(UIBackgroundFetchResult.newData)
-        }
+        print("Recieved IBM Cloud Push Notifications message: " + (payload as String) + ", payload: " + (userPayload as String))
     }
-    
+
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

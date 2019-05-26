@@ -22,6 +22,9 @@
 		7573B1452299C67800152755 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573B1442299C67800152755 /* TableViewCell.swift */; };
 		9B74AEC894C9F0F5162A50BF /* Pods_HelpCareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02C119C8B0D72FED762CE7EA /* Pods_HelpCareTests.framework */; };
 		BC132AD6229A0D36009AD611 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC132AD5229A0D36009AD611 /* CadastroViewController.swift */; };
+		BC132AD9229A83DD009AD611 /* BMSCredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC132AD8229A83DC009AD611 /* BMSCredentials.plist */; };
+		BC132ADD229A8E10009AD611 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC132ADC229A8E10009AD611 /* LoginVC.swift */; };
+		BC132ADF229A8E51009AD611 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC132ADE229A8E51009AD611 /* Constants.swift */; };
 		BCAEC3E3229A05CE009C6705 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAEC3E2229A05CE009C6705 /* RoundedButton.swift */; };
 		C2C011368069B338E6A87140 /* Pods_HelpCareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC28BECF3A8713ADDAD8B03 /* Pods_HelpCareUITests.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +72,9 @@
 		77F6DC38B76DFCC6929EE342 /* Pods-HelpCareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpCareTests.release.xcconfig"; path = "Target Support Files/Pods-HelpCareTests/Pods-HelpCareTests.release.xcconfig"; sourceTree = "<group>"; };
 		8434FFBF41DE4265824F13F3 /* Pods_HelpCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelpCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC132AD5229A0D36009AD611 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
+		BC132AD8229A83DC009AD611 /* BMSCredentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BMSCredentials.plist; sourceTree = "<group>"; };
+		BC132ADC229A8E10009AD611 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		BC132ADE229A8E51009AD611 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BCAEC3E02299E1C8009C6705 /* HelpCare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HelpCare.entitlements; sourceTree = "<group>"; };
 		BCAEC3E2229A05CE009C6705 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		C57899E7487B9AE5D94DAB34 /* Pods-HelpCareUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpCareUITests.release.xcconfig"; path = "Target Support Files/Pods-HelpCareUITests/Pods-HelpCareUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +150,7 @@
 			children = (
 				BCAEC3E1229A05BA009C6705 /* Custom */,
 				BCAEC3E02299E1C8009C6705 /* HelpCare.entitlements */,
+				BC132AD8229A83DC009AD611 /* BMSCredentials.plist */,
 				7573B1462299C68400152755 /* Controller */,
 				7573B1412299C64E00152755 /* TableView */,
 				7573B10D2299988600152755 /* AppDelegate.swift */,
@@ -190,6 +197,7 @@
 				7573B13D2299C5B800152755 /* Cursos.swift */,
 				7573B13F2299C5F700152755 /* PagamentoCursos.swift */,
 				BC132AD5229A0D36009AD611 /* CadastroViewController.swift */,
+				BC132ADC229A8E10009AD611 /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -208,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				BCAEC3E2229A05CE009C6705 /* RoundedButton.swift */,
+				BC132ADE229A8E51009AD611 /* Constants.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -330,6 +339,7 @@
 			files = (
 				7573B1182299988700152755 /* LaunchScreen.storyboard in Resources */,
 				7573B1152299988700152755 /* Assets.xcassets in Resources */,
+				BC132AD9229A83DD009AD611 /* BMSCredentials.plist in Resources */,
 				7573B1132299988600152755 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,9 +465,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7573B1102299988600152755 /* ViewController.swift in Sources */,
+				BC132ADF229A8E51009AD611 /* Constants.swift in Sources */,
 				BC132AD6229A0D36009AD611 /* CadastroViewController.swift in Sources */,
 				7573B1432299C66600152755 /* TableViewController.swift in Sources */,
 				7573B1402299C5F700152755 /* PagamentoCursos.swift in Sources */,
+				BC132ADD229A8E10009AD611 /* LoginVC.swift in Sources */,
 				BCAEC3E3229A05CE009C6705 /* RoundedButton.swift in Sources */,
 				7573B10E2299988600152755 /* AppDelegate.swift in Sources */,
 				7573B13E2299C5B800152755 /* Cursos.swift in Sources */,
